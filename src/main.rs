@@ -1,4 +1,4 @@
-use std::{io, process::exit};
+use std::process::exit;
 use clap::Parser;
 use image::{GenericImageView, ImageBuffer, Rgba, RgbaImage};
 
@@ -8,6 +8,8 @@ struct Args {
     input: String,
     #[arg(short = 'o', long = "out")]
     output: String,
+    #[arg(short = 'l', long = "overlay")]
+    layer: String,
 }
 
 fn main() {
@@ -18,15 +20,12 @@ fn main() {
 
     let i2 = RgbaImage::new(16, 16);
 
-    println!("No Overlay (1)\nOverlay (2)");
+    let layer = args.layer;
 
-    let mut answer = String::new();
-    io::stdin().read_line(&mut answer).unwrap();
-
-    match answer.trim() {
-        "1" => {no_overlay(inpath, outpath, i2);}
-        "2" => {overlay(inpath, outpath, i2);}
-        _ => panic!("Enter 1 or 2.")
+    match layer.trim() {
+        "no" => {no_overlay(inpath, outpath, i2);}
+        "yes" => {overlay(inpath, outpath, i2);}
+        _ => panic!("Use -l yes or -l no.")
     }
 }
 
