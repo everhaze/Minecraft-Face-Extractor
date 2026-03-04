@@ -1,4 +1,4 @@
-# minecraft-face-extractor
+# Minecraft-Face-Extractor
 A simple tool to extract the face from a minecraft skin.
 
 ## Usage 
