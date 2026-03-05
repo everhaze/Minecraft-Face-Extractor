@@ -2,16 +2,16 @@
 A simple tool to extract the face from a minecraft skin.
 
 ## Usage 
-Usage: mcex --in <INPUT> --out <OUTPUT> --overlay <LAYER>
+Usage: mcex --in (INPUT) --out (OUTPUT) --overlay (LAYER)
 
 ## Options
 Options:
 
- -i, --in <INPUT>
+ -i, --in (INPUT)
 
- -o, --out <OUTPUT>
+ -o, --out (OUTPUT)
 
- -l, --overlay <LAYER>
+ -l, --overlay (LAYER)
 
 Use -l yes to include the skin's overlay.
 
